@@ -24,19 +24,19 @@
                 <form name="Entry" ng-submit="done()">
                     <input type="text" placeholder="New Item" ng-model="Entry.reason"></input>
                     <input type="text" placeholder="Importance 1-10" ng-model="Entry.weight"></input>
-                    <button ng-click="addCon(Entry)">Add as Con</button>
-                    <button ng-click="addPro(Entry)">Add as Pro</button>
-                    <button type="submit">done</button>
+                    <button type="button" ng-click="addCon(Entry)">Add as Con</button>
+                    <button type="button" ng-click="addPro(Entry)">Add as Pro</button>
+                    <button type="submit" ng-click="done()">done</button>
                 </form>
 
             </div>
         </div>
-        <div class="row">
+        <div class="row" style="height:70px">
             <div class="col-sm-6">
                 <h2>Pros</h2>
                 <ul>
                     <li ng-repeat='pro in pros'>
-                        {{pro.text}}
+                        {{pro.text}}<br>{{pro.weight}}
                     </li>
                 </ul>
             </div>
@@ -49,8 +49,12 @@
                 </ul>
             </div>
         </div>
-
+<div class="row">
+    <div class="col-sm-6">
+        {{message}}
+        <button type="button" ng-click="clear()">start over</button>
     </div>
+</div>
 
     </div>
 
